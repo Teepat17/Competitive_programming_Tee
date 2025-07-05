@@ -5,26 +5,37 @@ using namespace std;
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t=1;
+    int t;
     cin >> t;
     while(t--){
         int n,x1,y1,x2,y2;
         cin >> n >> x1 >> y1 >> x2 >> y2;
-        int sum =0;
-        int b = INT_MIN;
+        
         bool mach = true;
-        for(int i =0; i<n; i++){
-            int a;
+        int a;
+        cin >> a;
+        int b = a;
+        int sum =a;
+        int dist = a;
+        for(int i =1; i<n; i++){
             cin >> a;
-            if(a != b && b != INT_MIN) mach = false;
+            if(a != b) mach = false;
             b = a;
             sum += a;
+            dist -= a;
         }
-        int dis = sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+        double dis = sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+        if(n==1 && dis == 1){
+            cout << "No" << endl;
+        }
+        if(sum<dis || dist>dis){
+            cout << "No" << endl;
+        } else{
+            if(sum >= dis && (dis > 0 || (dis == 0 && mach == true && n%2==0))){
+                cout << "Yes" << endl;
+            } else cout << "No" << endl;
+        }
 
-        if(sum >= dis && (dis > 0 || (mach == true && n%2==0))){
-            cout << "Yes" << endl;
-        } else cout << "No" << endl;
 
     }
     return 0;
