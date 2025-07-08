@@ -2,41 +2,54 @@
 using namespace std;
 #define int long long
 
-int get_prefix_min_sum(const vector<int>& a) {
-    int sum = a[0], curr = a[0];
-    for (int i = 1; i < a.size(); ++i) {
-        curr = min(curr, a[i]);
-        sum += curr;
-    }
-    return sum;
-}
-
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t; cin >> t;
-    while (t--) {
-        int n; cin >> n;
-        vector<int> a(n);
-        for (auto& x : a) cin >> x;
+    int n;
+    cin >> n;
+    vector<int> a(n + 2), p(n + 2), suf(n + 3), c0(n + 2);
 
-        int res = get_prefix_min_sum(a);
+    for (int i = 1; i < n; i++) cin >> a[i];
 
-        int idx = max_element(a.begin(), a.end()-1) - a.begin();
+    // Build prefix minimums
+    p[1] = a[1];
+    for (int i = 2; i < n; i++)
+        p[i] = min(p[i - 1], a[i]);
 
-        for (int j = idx + 1; j < n; ++j) {
-            int ai = a[idx], aj = a[j];
-            a[idx] = ai + aj;
-            a[j] = 0;
+    int S0 = 0;
+    for (int i = 1; i < n; i++)
+        S0 += p[i];
 
-            res = min(res, get_prefix_min_sum(a));
+    // Suffix sums
+    suf[n + 1] = 0;
+    for (int i = n; i >= 1; i--)
+        suf[i] = suf[i + 1] + a[i];
 
-            a[idx] = ai; a[j] = aj;
+    // Find first index where prefix min stops decreasing
+    int f = n;
+    for (int i = 2; i < n; i++) {
+        if (p[i] == p[i - 1]) {
+            f = i;
+            break;
         }
-
-        cout << res << '\n';
     }
 
-    return 0;
+    // Build delta of prefix mins
+    for (int i = 2; i < n; i++)
+        c0[i] = p[i - 1] - p[i];
+
+    int best = 0, M = LLONG_MAX;
+    for (int j = 2; j < n; j++) {
+        int sv;
+        if (c0[j]) {
+            sv = suf[j] - a[j];
+        } else {
+            M = min(M, c0[j - 1]);
+            sv = suf[j] - min(a[j], M);
+        }
+        best = max(best, sv);
+    }
+
+    cout << S0 - best << '\n';
 }

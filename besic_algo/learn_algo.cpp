@@ -5,8 +5,11 @@ using namespace std;
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    
-    // Your code goes here
+
+    char s= 's';
+    if(islower(s)){
+        cout << s;
+    } else cout << (char)tolower(s);
 
     return 0;
 }
