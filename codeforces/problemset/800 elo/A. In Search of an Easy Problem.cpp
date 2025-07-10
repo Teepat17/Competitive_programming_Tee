@@ -6,17 +6,16 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n,k;
-    cin >> n >> k;
-    int cost = 0;
+    int n;
+    cin >> n;
+    bool c = false;
     while(n--){
         int a;
         cin >> a;
-        if(a<= k) cost++;
-        else cost += 2; 
+        if(a==1) c = true;
     }
 
-    cout << cost;
+    cout << (c ? "HARD" : "EASY");
 
     return 0;
 }
