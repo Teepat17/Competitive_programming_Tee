@@ -6,9 +6,15 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int x;
-    cin >> x;
-    cout << (x+4)/5;
+    int k,n,w;
+
+    cin >> k >> n >> w;
+    int total=k;
+    for(int i=2; i<=w; i++){
+        total += k*i;
+    }
+
+    cout << (total-n>0 ? total-n : 0);
 
     return 0;
 }
