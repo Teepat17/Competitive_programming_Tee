@@ -8,13 +8,19 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define pb push_back
 #define pii pair<int,int>
-#define intt size_t
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    set <int> dress;
+    for(int i=0; i<4; i++){
+        int a;
+        cin >> a;
+        dress.insert(a);
+    }
 
+    cout << 4-dress.size();
 
     return 0;
 }
