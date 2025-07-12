@@ -15,7 +15,26 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    
+    int n;
+    cin >> n;
+    int mxn = 1;
+    if(n>0){
+        int b;
+        cin >> b;
+        int cur = 1;
+        
+        lp(i,1,n){
+            int a;
+            cin >> a;
+            if(a>=b){
+                cur++;        
+            } else cur = 1;
+
+            b = a;
+            mxn = max(cur,mxn);
+        }
+    }
+    cout << mxn;
 
     return 0;
 }

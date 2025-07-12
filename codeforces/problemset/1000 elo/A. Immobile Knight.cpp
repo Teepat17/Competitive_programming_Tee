@@ -15,7 +15,13 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    
+    int t=1;
+    cin >> t;
+    while(t--){
+        int n,m;
+        cin >> n >> m;
+        cout << n/2 +1 << ' ' << m/2+1 << endl;
+    }
 
     return 0;
 }
