@@ -9,14 +9,21 @@ using namespace std;
 #define pb push_back
 #define pii pair<int,int>
 #define intt size_t
-#define lp(i,x,n) for(int i=x; i<n; i++)
-#define num_ans pow(10,9)+7
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    string s;
+    cin >> s;
 
+    for(auto c:s){
+        if(c == 'H' || c =='Q' || c == '9'){
+            cout << "YES";
+            return 0;
+        }
+    }
 
+    cout << "NO";
     return 0;
 }

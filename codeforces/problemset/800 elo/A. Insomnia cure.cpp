@@ -10,13 +10,21 @@ using namespace std;
 #define pii pair<int,int>
 #define intt size_t
 #define lp(i,x,n) for(int i=x; i<n; i++)
-#define num_ans pow(10,9)+7
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    int k,l,m,n,d;
+    cin >> k >> l >> m >> n >> d;
+    int count =0;
+    lp(i,1,d+1){
+        if((i%k == 0 || i%l == 0 || i%m==0 || i%n==0)){
+            count++;
+        }
+    }
 
+    cout << count;
 
     return 0;
 }

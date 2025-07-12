@@ -9,14 +9,18 @@ using namespace std;
 #define pb push_back
 #define pii pair<int,int>
 #define intt size_t
-#define lp(i,x,n) for(int i=x; i<n; i++)
-#define num_ans pow(10,9)+7
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    int n;
+    cin >> n;
+    vector <int> arr(n);
+    for(int i=0 ; i<n; i++) cin >> arr[i];
 
+    sort(all(arr));
+    for(int i=0 ; i<n; i++) cout << arr[i] << ' ';
 
     return 0;
 }

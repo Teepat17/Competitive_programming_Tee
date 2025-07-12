@@ -10,13 +10,23 @@ using namespace std;
 #define pii pair<int,int>
 #define intt size_t
 #define lp(i,x,n) for(int i=x; i<n; i++)
-#define num_ans pow(10,9)+7
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    unordered_map <string,int> polykey = {{"Tetrahedron",4},{"Cube",6},{"Octahedron",8},{"Dodecahedron",12},{"Icosahedron",20}};
+    
+    int n;
+    cin >> n;
+    int face =0;
+    lp(i,0,n){
+        string s;
+        cin >> s;
+        face += polykey[s];
+    }
 
+    cout << face;
 
     return 0;
 }

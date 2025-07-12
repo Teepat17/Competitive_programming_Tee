@@ -10,13 +10,14 @@ using namespace std;
 #define pii pair<int,int>
 #define intt size_t
 #define lp(i,x,n) for(int i=x; i<n; i++)
-#define num_ans pow(10,9)+7
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << max({a + b + c, a * b * c, (a + b) * c, a * (b + c)});
 
     return 0;
 }
