@@ -15,7 +15,7 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    
+    cout << 367%28;
 
     return 0;
 }
