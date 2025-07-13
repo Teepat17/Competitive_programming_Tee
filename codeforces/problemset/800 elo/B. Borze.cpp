@@ -15,20 +15,21 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n;
-    cin >> n;
-    vector <pii> arr(n);
-    lp(i,0,n){
-        int a,b;
-        cin >> a >> b;
-        arr[i] = {a,b};
-    }
+    string s;
+    cin >> s;
+    intt n = s.size();
     int count =0;
-    lp(i,0,n){
-        lp(j,0,n){
-            if(arr[i].F == arr[j].S && i != j ) count++;
+    for (intt i = 0; i < n;) {
+        if (s[i] == '.') {
+            cout << 0;
+            i++;
+        } else if (s[i] == '-' && s[i+1] == '.') {
+            cout << 1;
+            i += 2;
+        } else if (s[i] == '-' && s[i+1] == '-') {
+            cout << 2;
+            i += 2;
         }
     }
-    cout << count;
     return 0;
 }

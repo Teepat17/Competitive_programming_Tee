@@ -17,18 +17,16 @@ int32_t main() {
 
     int n;
     cin >> n;
-    vector <pii> arr(n);
+    vector <pii> odd;
+    vector <pii> even;
+    
     lp(i,0,n){
-        int a,b;
-        cin >> a >> b;
-        arr[i] = {a,b};
+        int a;
+        cin >> a;
+        if(a%2!=0) odd.pb({a,i+1});
+        else even.pb({a,i+1});
     }
-    int count =0;
-    lp(i,0,n){
-        lp(j,0,n){
-            if(arr[i].F == arr[j].S && i != j ) count++;
-        }
-    }
-    cout << count;
+
+    cout << (odd.size() == 1 ? odd[0].S : even[0].S);
     return 0;
 }
