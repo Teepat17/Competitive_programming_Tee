@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-#define B begin()
-#define E end()
 #define F first
 #define S second
 #define all(x) x.begin(), x.end()
@@ -15,7 +13,19 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-
+    int t; 
+    cin>> t;
+    while(t--){
+        int n;
+        cin >> n;
+        if(n<3){
+            cout << 0 << endl;
+            continue;
+        } else{
+            int ans = n - (n+1)/2;
+            cout << (n%2==0 ? ans-1 : ans) << endl;
+        }
+    }
 
     return 0;
 }

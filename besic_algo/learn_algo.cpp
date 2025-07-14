@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-#define B begin()
-#define E end()
 #define F first
 #define S second
 #define all(x) x.begin(), x.end()
@@ -15,7 +13,7 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    cout << 367%28;
+    lp(i,0,3) cout << i;
 
     return 0;
 }
