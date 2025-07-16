@@ -21,15 +21,18 @@ int32_t main() {
     //cin >> t;
     while(t--){
 
-        int n,m;
-        cin >> n >> m;
-        VEC arr(m);
-        FOR(0,m) cin >> arr[i];
-        sort(all(arr));
-        int mxn = INT_MAX;
-        FOR(0,m-n+1) mxn = min(mxn,arr[i+n-1] - arr[i]);
+        int n,k;
+        cin >> n >> k;
+        int t = 240 - k;
+        int sum = 0;
+        int count = 0;
+        FOR(1,n+1){
+            sum+= i*5;
+            if(sum > t) break;
+            count++;
+        }
+        cout << count;
 
-        cout << mxn;
     }
 
     return 0;

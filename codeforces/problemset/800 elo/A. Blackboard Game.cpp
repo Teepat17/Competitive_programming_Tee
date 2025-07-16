@@ -18,18 +18,13 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-        int n,m;
-        cin >> n >> m;
-        VEC arr(m);
-        FOR(0,m) cin >> arr[i];
-        sort(all(arr));
-        int mxn = INT_MAX;
-        FOR(0,m-n+1) mxn = min(mxn,arr[i+n-1] - arr[i]);
+        int n;
+        cin >> n;
+        cout << (n % 4 ? "Alice" : "Bob") << '\n';
 
-        cout << mxn;
     }
 
     return 0;
