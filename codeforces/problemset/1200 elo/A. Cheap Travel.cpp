@@ -18,22 +18,13 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    cin >> t;
+    //cin >> t;
     while(t--){
 
-        int n;
-        cin >> n;
-        unordered_map <int,pii> f;
-        VEC arr(n);
-        FOR(0,n){
-            cin >> arr[i];
-            if(!f.count(arr[i])) f[arr[i]] = {1,i};
-            else f[arr[i]].F+=1;
-        }
-
-        for(auto [fe , idx] : f){
-            if(idx.F == 1) cout << idx.S+1 << endl;
-        }
+        int n, m, a, b;
+        cin >> n >> m >> a >> b;
+        if (m * a <= b) cout << n * a << "\n";
+        else cout << (n/m) * b + min((n%m) * a, b) << "\n";
 
     }
 

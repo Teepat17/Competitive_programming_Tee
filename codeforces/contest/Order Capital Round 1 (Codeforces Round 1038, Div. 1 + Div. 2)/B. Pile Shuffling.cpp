@@ -22,18 +22,8 @@ int32_t main() {
     while(t--){
 
         int n;
-        cin >> n;
-        unordered_map <int,pii> f;
-        VEC arr(n);
-        FOR(0,n){
-            cin >> arr[i];
-            if(!f.count(arr[i])) f[arr[i]] = {1,i};
-            else f[arr[i]].F+=1;
-        }
-
-        for(auto [fe , idx] : f){
-            if(idx.F == 1) cout << idx.S+1 << endl;
-        }
+        vector <VEC> arr(n,VEC(4));
+        
 
     }
 

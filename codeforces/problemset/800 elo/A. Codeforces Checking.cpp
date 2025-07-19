@@ -17,24 +17,19 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
+
+    set <char> code;
+    string s = "codeforces";
+    for(char c : s){
+        code.insert(c);
+    }
+
     int t =1;
     cin >> t;
     while(t--){
 
-        int n;
-        cin >> n;
-        unordered_map <int,pii> f;
-        VEC arr(n);
-        FOR(0,n){
-            cin >> arr[i];
-            if(!f.count(arr[i])) f[arr[i]] = {1,i};
-            else f[arr[i]].F+=1;
-        }
-
-        for(auto [fe , idx] : f){
-            if(idx.F == 1) cout << idx.S+1 << endl;
-        }
-
+        char a; cin >> a;
+        cout << (code.count(a) ? "YES" : "NO") << endl;
     }
 
     return 0;

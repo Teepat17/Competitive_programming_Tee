@@ -20,21 +20,8 @@ int32_t main() {
     int t =1;
     cin >> t;
     while(t--){
-
-        int n;
-        cin >> n;
-        unordered_map <int,pii> f;
-        VEC arr(n);
-        FOR(0,n){
-            cin >> arr[i];
-            if(!f.count(arr[i])) f[arr[i]] = {1,i};
-            else f[arr[i]].F+=1;
-        }
-
-        for(auto [fe , idx] : f){
-            if(idx.F == 1) cout << idx.S+1 << endl;
-        }
-
+        int n ,m; cin >> n >> m;
+        cout << (((n==1 || m == 1) || (n == 2 && m == 2)) ? "NO\n" : "YES\n");
     }
 
     return 0;
