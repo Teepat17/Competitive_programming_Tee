@@ -1,24 +1,40 @@
+/*
+Author : lnw_tee
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
 #define F first
 #define S second
-#define pb push_back
 #define all(x) x.begin(), x.end()
-#define rep(i,a,b) for(int i=a;i<b;++i)
-#define fastio ios::sync_with_stdio(0);cin.tie(0);
+#define rall(x) x.rbegin(), x.rend()
+#define pb push_back
+#define pii pair<int,int>
+#define intt size_t
+#define FOR(x,n) for(int i=x; i<n; i++)
+#define VEC vector <int>
 
 int32_t main() {
-    fastio
-    int n, t; cin >> n >> t;
-    vector<int> a(n);
-    for (auto &x : a) cin >> x;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    int ans = 0, sum = 0, l = 0;
-    rep(r,0,n) {
-        sum += a[r];
-        while (sum > t) sum -= a[l++];
-        ans = max(ans, r - l + 1);
+    int t =1;
+    //cin >> t;
+    while(t--){
+
+        int n, t; cin >> n >> t;
+        vector<int> arr(n);
+        FOR(0,n) cin >> arr[i];
+
+        int ans = INT_MIN, sum = 0, l = 0,r;
+        for(int r = 0; r<n; r++) {
+            sum += arr[r];
+            while (sum > t) sum -= arr[l++];
+            ans = max(ans, r - l + 1);
+        }
+        cout << ans;
+
     }
-    cout << ans;
+
+    return 0;
 }

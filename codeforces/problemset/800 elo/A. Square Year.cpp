@@ -7,11 +7,19 @@ using namespace std;
 #define F first
 #define S second
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
 #define pb push_back
 #define pii pair<int,int>
 #define intt size_t
 #define FOR(x,n) for(int i=x; i<n; i++)
 #define VEC vector <int>
+
+bool is_persq(int n){
+    int a = sqrt(n);
+
+    return a*a == n;
+}
+
 
 int32_t main() {
     ios::sync_with_stdio(false);
@@ -21,14 +29,14 @@ int32_t main() {
     cin >> t;
     while(t--){
 
-        int a, b, k; 
-        cin >> a >> b >> k;
-        int g = gcd(a, b);
-        int dx = a / g, dy = b / g;
-        if (dx <= k && dy <= k) {
-            cout << 1 << endl;
-        } else {
-            cout << 2 << endl;
+        string a;
+        cin >> a;
+        int n = 0;
+        FOR(0,4) n += (a[i]-'0') * pow(10, 3-i);
+        if(!is_persq(n)) cout << -1 << endl;
+        else{
+            int k = sqrt(n);
+            cout << k/2 << ' ' << k-k/2 << endl;
         }
 
     }

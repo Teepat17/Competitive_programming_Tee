@@ -7,6 +7,7 @@ using namespace std;
 #define F first
 #define S second
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
 #define pb push_back
 #define pii pair<int,int>
 #define intt size_t
@@ -18,18 +19,18 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    cin >> t;
+    //cin >> t;
     while(t--){
 
-        int a, b, k; 
-        cin >> a >> b >> k;
-        int g = gcd(a, b);
-        int dx = a / g, dy = b / g;
-        if (dx <= k && dy <= k) {
-            cout << 1 << endl;
-        } else {
-            cout << 2 << endl;
+        VEC arr(5);
+        FOR(1,5) cin >> arr[i];
+        string s; cin >> s;
+        int cnt = 0;
+        for(char c : s){
+            int a = c - '0';
+            cnt += arr[a];
         }
+        cout << cnt << endl;
 
     }
 

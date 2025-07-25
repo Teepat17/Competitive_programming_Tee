@@ -7,6 +7,7 @@ using namespace std;
 #define F first
 #define S second
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
 #define pb push_back
 #define pii pair<int,int>
 #define intt size_t
@@ -21,15 +22,23 @@ int32_t main() {
     cin >> t;
     while(t--){
 
-        int a, b, k; 
-        cin >> a >> b >> k;
-        int g = gcd(a, b);
-        int dx = a / g, dy = b / g;
-        if (dx <= k && dy <= k) {
-            cout << 1 << endl;
-        } else {
-            cout << 2 << endl;
+        int n ,k; cin >> n >> k;
+        string s; cin >> s;
+        unordered_map <char,int> key;
+        for(char c : s) key[c]++;
+        int cnt =0;
+        for(auto [c,n] : key){
+            if(n%2!=0) cnt++;
         }
+
+        int re = n-k;
+
+        if(re%2==0){
+            cout << (cnt <= k ? "YES" : "NO") << endl;
+        } else {
+            cout << (cnt -1 <=k ? "YES" : "NO") << endl;
+        }
+        
 
     }
 

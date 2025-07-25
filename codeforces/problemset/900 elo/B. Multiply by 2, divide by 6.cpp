@@ -7,6 +7,7 @@ using namespace std;
 #define F first
 #define S second
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
 #define pb push_back
 #define pii pair<int,int>
 #define intt size_t
@@ -21,15 +22,22 @@ int32_t main() {
     cin >> t;
     while(t--){
 
-        int a, b, k; 
-        cin >> a >> b >> k;
-        int g = gcd(a, b);
-        int dx = a / g, dy = b / g;
-        if (dx <= k && dy <= k) {
-            cout << 1 << endl;
-        } else {
-            cout << 2 << endl;
+        int n; cin >> n;
+        int cnt = 0;
+        while(n != 1){
+            if (n % 6 == 0) {
+                n /= 6;
+            } else if (n % 3 == 0) {
+                n *= 2;
+            } else {
+                cnt = -1;
+                break;
+            }
+        if (cnt != -1) cnt++;
+
         }
+
+        cout << (n==1 ? cnt : -1) << endl;
 
     }
 

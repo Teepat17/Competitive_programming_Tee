@@ -7,6 +7,7 @@ using namespace std;
 #define F first
 #define S second
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
 #define pb push_back
 #define pii pair<int,int>
 #define intt size_t
@@ -21,7 +22,20 @@ int32_t main() {
     //cin >> t;
     while(t--){
 
+        int n; cin >> n;
+        FOR(1,n+1){
+            for(int j = i; j<n; j++){
+                cout << ' ';
+            }
+            for(int c= 0; c<i; c++){
+                cout << '*';
+            }
+            for(int r = 0; r<i-1; r++){
+                cout << '*';
+            }
 
+            cout << endl;
+        }
 
     }
 
