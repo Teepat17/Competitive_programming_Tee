@@ -19,10 +19,23 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int cnt = 0;
+        int n; cin >> n;
+        string s; cin >> s;
+        unordered_map <char,char> pa = {{'(',')'}, {')','('}};
+        stack<char> st;
+        for(char c : s){
+            if(c == '(') st.push('(');
+            else{
+                if(!st.empty() && st.top() == pa[c]) st.pop();
+                else cnt++;
+            }
+        }
 
+        cout << abs(cnt) << endl;
 
     }
 

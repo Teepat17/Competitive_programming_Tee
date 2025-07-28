@@ -19,10 +19,15 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n; cin >> n;
+        VEC arr(n);
+        FOR(0,n) cin >> arr[i];
+        int mx = *max_element(all(arr)), mn = *min_element(all(arr));
 
+        cout << mx - mn << endl;
 
     }
 

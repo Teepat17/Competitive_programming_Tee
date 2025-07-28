@@ -19,10 +19,21 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n; cin >> n;
+        VEC arr(n);
+        int cnt = 0;
+        unordered_map <int,int> fq;
+        FOR(0,n){
+            int a; cin >> a;
+            int b = a-i;
+            cnt += fq[b];
+            fq[b]++;
+        }
 
+        cout << cnt << endl;
 
     }
 

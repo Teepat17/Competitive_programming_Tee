@@ -19,10 +19,17 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-
+        string s; cin >> s;
+        int n = (int)s.size();
+        if(n%2!=0){
+            cout << "NO" << endl;
+            continue;
+        }
+        n /= 2;
+        cout << (s.substr(0,n) == s.substr(n,n*2) ? "YES" : "NO") << endl;
 
     }
 

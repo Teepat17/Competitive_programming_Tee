@@ -19,10 +19,17 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n,k; cin >> n >> k;
+        set <int> arr;
+        FOR(0,n){
+            int a; cin >> a;
+            arr.insert(a);
+        }
 
+        cout << (arr.count(k) ? "YES" : "NO") << endl;
 
     }
 

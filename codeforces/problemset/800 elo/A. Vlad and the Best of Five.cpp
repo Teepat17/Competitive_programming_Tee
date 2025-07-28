@@ -19,10 +19,17 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        string s; cin >> s;
+        int a = 0, b= 0;
+        for(char c : s){
+            if(c == 'A') a++;
+            else b++;
+        }
 
+        cout << (a>b ? "A" : "B") << endl;
 
     }
 

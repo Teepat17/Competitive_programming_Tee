@@ -19,10 +19,18 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-
+        string s; cin >> s;
+        
+        int n = s[0] - '0';
+        int ans = 10*(n-1);
+        for(intt i=1; i<=s.size(); i++){
+            ans+= i;
+        }
+        cout << ans << endl;
+        
 
     }
 

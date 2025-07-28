@@ -22,7 +22,17 @@ int32_t main() {
     //cin >> t;
     while(t--){
 
+        int n,m; cin >> n >> m;
+        VEC arr(n);
+        FOR(0,n) cin >> arr[i];
+        sort(all(arr));
+        int cur = 0, mn = 0;
+        FOR(0,m){
+            cur += arr[i];
+            mn = min(cur,mn);
+        }
 
+        cout << abs(mn) << endl;
 
     }
 

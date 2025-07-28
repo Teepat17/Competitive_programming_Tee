@@ -19,10 +19,19 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n; cin >> n;
+        VEC arr(n);
+        FOR(0,n) cin >> arr[i];
+        int cnteven = 0 ,cntodd = 0, idx = -1;
+        FOR(0,n){
+            if(i%2==0 && arr[i]%2==1) cntodd++;
+            if(i%2==1 && arr[i]%2==0) cnteven++;
+        }
 
+        cout << (cntodd == cnteven ? (cntodd+cnteven)/2 : -1) << endl;
 
     }
 

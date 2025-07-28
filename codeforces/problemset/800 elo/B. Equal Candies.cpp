@@ -19,10 +19,17 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n; cin >> n;
+        VEC arr(n);
+        FOR(0,n) cin >> arr[i];
+        int mn = *min_element(all(arr));
+        int sum = 0;
+        FOR(0,n) sum += arr[i]-mn;
 
+        cout << sum << endl;
 
     }
 

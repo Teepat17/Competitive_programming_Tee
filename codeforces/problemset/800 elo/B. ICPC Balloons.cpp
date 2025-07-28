@@ -19,10 +19,21 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n; string s; cin >> n >> s;
+        unordered_map <char,int> fi;
+        int cnt = 0;
+        for(char c:s){
+            if(fi[c] >= 1) cnt++;
+            else{
+                fi[c]++;
+                cnt+=2;
+            }
+        }
 
+        cout << cnt << endl;
 
     }
 

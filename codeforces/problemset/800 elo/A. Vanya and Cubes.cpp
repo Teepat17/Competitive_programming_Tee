@@ -22,7 +22,17 @@ int32_t main() {
     //cin >> t;
     while(t--){
 
+        int n; cin >> n;
+        int cur = 0, ans = 0, total=0;
+        for(int i =1; total <=n; i++ ){
+            cur+=i;
+            total += cur;
+            if(total <= n) ans = i;
+        }
 
+        cout << ans;
+
+        
 
     }
 

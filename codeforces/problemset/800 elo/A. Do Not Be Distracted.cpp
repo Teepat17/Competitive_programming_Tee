@@ -19,10 +19,23 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n; cin >>n;
+        string s; cin >> s;
+        set <char> work;
+        bool ans = true;
+        FOR(0,n){
+            if(i != 0 && s[i] == s[i-1]) continue;
 
+            if(work.count(s[i])){
+                ans = false;
+                break;
+            } else work.insert(s[i]);
+        }
+
+        cout << (ans ? "YES" : "NO") << endl;
 
     }
 

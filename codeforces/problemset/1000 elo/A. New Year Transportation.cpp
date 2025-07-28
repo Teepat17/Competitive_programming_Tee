@@ -22,7 +22,22 @@ int32_t main() {
     //cin >> t;
     while(t--){
 
-
+        int n,t; cin >> n >> t;
+        t--;
+        VEC arr(n);
+        FOR(0,n) cin >> arr[i];
+        int idx = 0;
+        for(int i =0; i<n;){
+            idx = i;
+            i += arr[i];
+            if(idx == t){
+                cout << "YES";
+                return 0;
+            } else if(idx > t){
+                cout << "NO";
+                return 0;
+            }
+        }
 
     }
 

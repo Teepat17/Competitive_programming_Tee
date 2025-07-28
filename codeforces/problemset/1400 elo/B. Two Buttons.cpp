@@ -14,6 +14,15 @@ using namespace std;
 #define FOR(x,n) for(int i=x; i<n; i++)
 #define VEC vector <int>
 
+int recur(int n,int m){
+    if(m<=n) return n-m;
+    else{
+        if(m%2==0) return 1 + recur(n,m/2);
+        else return 1 + recur(n,m+1);
+    }
+}
+
+
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -22,7 +31,8 @@ int32_t main() {
     //cin >> t;
     while(t--){
 
-
+        int n ,m; cin >> n >> m;
+        cout << recur(n,m);
 
     }
 

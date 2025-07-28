@@ -19,10 +19,11 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-
+        string s; cin >> s;
+        cout << s[0]-'0' + s[2]-'0' << endl;
 
     }
 

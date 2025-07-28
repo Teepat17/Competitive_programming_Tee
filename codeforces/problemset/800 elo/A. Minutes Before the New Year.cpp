@@ -19,10 +19,13 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-
+        int h,m; cin >> h >> m;
+        int time = 24*60;
+        int cur = h*60 + m;
+        cout << time - cur << endl;
 
     }
 

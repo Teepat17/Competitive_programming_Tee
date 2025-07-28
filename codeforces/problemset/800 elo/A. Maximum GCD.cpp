@@ -19,10 +19,12 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-
+        int n; cin >> n;
+        while(n%2!=0) n--;
+        cout << gcd(n/2,n) << endl;
 
     }
 

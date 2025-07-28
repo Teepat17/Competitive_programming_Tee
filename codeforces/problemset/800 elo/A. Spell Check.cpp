@@ -19,11 +19,14 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
+    string a = "Timur";
+    sort(all(a));
     while(t--){
-
-
-
+        int n; cin>> n;
+        string s; cin >> s;
+        sort(all(s));
+        cout << (s==a ? "YES" : "NO") << endl;
     }
 
     return 0;

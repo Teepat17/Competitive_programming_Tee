@@ -19,10 +19,12 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-
+        int x,y,n; cin >> x >> y >> n;
+        int ans = (n-n%x)+y;
+        cout << (ans <= n ? ans : ans - x) << endl;
 
     }
 

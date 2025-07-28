@@ -19,9 +19,16 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
+        int n; cin >> n;
+        int c1=0, c2=0, cur = n/3, left = n%3;
+        c1 = cur; c2 = cur;
+        if(left == 1) c1++;
+        else if(left == 2) c2++;
+
+        cout << c1 << ' ' << c2 << endl;
 
 
     }
