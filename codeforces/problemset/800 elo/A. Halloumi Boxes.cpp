@@ -22,14 +22,20 @@ int32_t main() {
     cin >> t;
     while(t--){
 
-        int ans = 0;
-        for (int i = 0; i < 10; ++i) {
-        string s; cin >> s;
-        for (int j = 0; j < 10; ++j) if (s[j] == 'X') {
-            ans += min({i, 9 - i, j, 9 - j}) + 1;
+        int n,k; cin >> n >> k;
+        VEC arr(n); FOR(0,n) cin >> arr[i];
+
+        int cnt = 0, cur = 0;
+
+        FOR(1,n){
+            if(arr[i]<arr[i-1]) cur++;
+            else cur = 0;
+
+            cnt = max(cnt,cur);
         }
-    }
-    cout << ans << endl;
+        if(cnt >0) cnt++;
+
+        cout << (k == 1 && cnt != 0 ? "NO" : "YES") << endl;
 
     }
 

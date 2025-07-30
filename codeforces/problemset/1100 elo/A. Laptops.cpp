@@ -19,17 +19,26 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    cin >> t;
+    //cin >> t;
     while(t--){
 
-        int ans = 0;
-        for (int i = 0; i < 10; ++i) {
-        string s; cin >> s;
-        for (int j = 0; j < 10; ++j) if (s[j] == 'X') {
-            ans += min({i, 9 - i, j, 9 - j}) + 1;
+        int n; cin >> n;
+        vector <pii> arr;
+        FOR(0,n){
+            int a ,b; cin >> a >> b;
+            arr.pb({a,b});
         }
-    }
-    cout << ans << endl;
+        sort(all(arr));
+        bool c = false;
+        FOR(1,n){
+            auto [pf,qf] = arr[i-1];
+            auto [p,q] = arr[i];
+
+            if(pf < p && qf > q) c = true;
+            
+        }
+
+        cout << (c ? "Happy Alex" : "Poor Alex");
 
     }
 

@@ -19,17 +19,21 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    cin >> t;
+    //cin >> t;
     while(t--){
 
-        int ans = 0;
-        for (int i = 0; i < 10; ++i) {
-        string s; cin >> s;
-        for (int j = 0; j < 10; ++j) if (s[j] == 'X') {
-            ans += min({i, 9 - i, j, 9 - j}) + 1;
+        string ans = "#Black&White", key = "CMY";
+        set <char> color(all(key));
+        int n,m; cin >> n >> m;
+        FOR(0,n){
+            for(int j =0; j<m; j++){
+                char a;
+                cin >> a;
+                if(color.count(a)) ans = "#Color";
+            }
         }
-    }
-    cout << ans << endl;
+
+        cout << ans;
 
     }
 

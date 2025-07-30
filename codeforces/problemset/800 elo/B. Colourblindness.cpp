@@ -22,14 +22,16 @@ int32_t main() {
     cin >> t;
     while(t--){
 
-        int ans = 0;
-        for (int i = 0; i < 10; ++i) {
-        string s; cin >> s;
-        for (int j = 0; j < 10; ++j) if (s[j] == 'X') {
-            ans += min({i, 9 - i, j, 9 - j}) + 1;
+        int n; cin >> n;
+        string arr,arr2; cin >> arr >> arr2;
+        int cnt = 0;
+        FOR(0,n){
+            if(arr[i] == arr2[i]) cnt++;
+            else if((arr[i] == 'B' && arr2[i] == 'G') || (arr[i] == 'G' && arr2[i] == 'B')) cnt++;
         }
-    }
-    cout << ans << endl;
+
+        cout << (cnt == n ? "YES" : "NO") << endl;
+
 
     }
 
