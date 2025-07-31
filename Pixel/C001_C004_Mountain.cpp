@@ -22,17 +22,25 @@ int32_t main() {
     //cin >> t;
     while(t--){
 
-        
-        FOR(2,1000000){
-            bool c = true;
-            for(int j = 2; j*j <= i; j++){
-                if(i%j==0){
-                    c = false;
-                    break;
+        VEC arr(1005,-1);
+        FOR(0,1000) cin >> arr[i];
+        FOR(0,1000){
+            int a = arr[i];
+            if(a == -1) break;
+            for(int j = 0; j< a; j++){
+                for(int c = j; c<a; c++){
+                    cout << ' ';
                 }
+                for(int s = -1; s<j; s++){
+                    cout << '*';
+                }
+                for(int c2 = j; c2<a; c2++){
+                    cout << ' ';
+                }
+                cout << endl;
             }
-            if(c) cout << i << ' ';
         }
+
 
     }
 

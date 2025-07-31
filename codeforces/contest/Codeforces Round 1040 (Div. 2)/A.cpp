@@ -19,20 +19,19 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    //cin >> t;
+    cin >> t;
     while(t--){
 
-        
-        FOR(2,1000000){
-            bool c = true;
-            for(int j = 2; j*j <= i; j++){
-                if(i%j==0){
-                    c = false;
-                    break;
-                }
-            }
-            if(c) cout << i << ' ';
+        int n; cin >> n;
+        int sum = 0, cnt0 = 0;
+        FOR(0, n) {
+            int x; cin >> x;
+            sum += x;
+            if(x == 0) sum++;
         }
+        cout << sum + cnt0 << endl;
+    
+        
 
     }
 
