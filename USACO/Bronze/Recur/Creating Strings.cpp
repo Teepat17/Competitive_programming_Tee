@@ -19,10 +19,22 @@ int32_t main() {
     cin.tie(nullptr);
 
     int t =1;
-    cin >> t;
+    //cin >> t;
     while(t--){
 
+        string s; cin >> s;
+        sort(all(s));
 
+        vector<string> ans;
+
+        do{
+            ans.pb(s);
+        } while(next_permutation(all(s))); {
+            cout << ans.size() << endl;
+            for(auto x : ans){
+                cout << x << endl;
+            }
+        }
 
     }
 
