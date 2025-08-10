@@ -22,7 +22,8 @@ int32_t main() {
     cin >> t;
     while(t--){
 
-
+        int n; cin >> n;
+        cout << (n%2 == 1 ? ((n/2)+1) : n/2) << endl;
 
     }
 
